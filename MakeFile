@@ -1,0 +1,24 @@
+.PHONY:build
+build:
+	go build ./cmd main.go
+
+.PHONY:run
+run:
+	go run ./cmd main.go
+
+.PHONY:fmt
+fmt:
+	go fmt ./...
+
+.PHONY:compose
+compose:
+	docker-compose up --build
+
+.PHONY:compose-down
+compose-down:
+	docker-compose down
+
+.PHONY:compose-logs
+compose-logs:
+	docker-compose logs
+

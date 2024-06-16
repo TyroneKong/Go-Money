@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  # backend:
+  #   build:
+  #     context: . # The context is the root of your monorepo
+  #     dockerfile: Dockerfile.go # Ensure the correct Dockerfile is used
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - "8080:8080"
+  # db:
+  #   image: mysql:latest
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=***
+  #     - MYSQL_DATABASE=finance
+
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - .:/app # Mount the entire repo for development (optional)
+
+  frontend:
+    build:
+      context: ./web/client # Context for the Next.js app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web/client:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
