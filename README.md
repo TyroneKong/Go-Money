@@ -45,10 +45,11 @@ from root of project where docker-compose.yml is located run the following
 docker-compose up --build
 
 ```
+BACK:
+I decided to use Gorm to query the db and the standard http package to set up routes. JWT and bcrypt for authentication.
 
-I decided to use Gorm to connect to the db and query, since 1.22 and the change to the native http package in the way you define routes, I decided to use this instead of chi or fibre. golang-jwt was used for authentication.
-
-On the front, used react hook form, zod, axios, tanstack query/table, tailwind and shadcn.
+FRONT:
+I decided to use Axios, Tanstack Query, Tanstack Table, Zod, React Hook Form, ShadCN and Tailwind.
 
 This is still a work in progress...
 
